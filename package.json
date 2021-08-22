@@ -1,0 +1,31 @@
+{
+  "name": "sample-hs-login-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An example server that uses handshake-login to authenticate.",
+  "license": "MIT",
+  "repository": "git://github.com/rithvikvibhu/sample-hs-login-server.git",
+  "homepage": "https://github.com/rithvikvibhu/sample-hs-login-server",
+  "bugs": {
+    "url": "https://github.com/rithvikvibhu/sample-hs-login-server/issues"
+  },
+  "keywords": [
+    "hns",
+    "handshake",
+    "authentication"
+  ],
+  "author": "Rithvik Vibhu <rithvikvibhu@gmail.com>",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "handshake-login": "file:../handshake-login/handshake-login-0.1.0.tgz"
+  }
+}
