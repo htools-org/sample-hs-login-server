@@ -5,6 +5,11 @@ const session = require('express-session');
 
 const { HandshakeLogin } = require('handshake-login');
 
+const hLoginOptions = {
+  useDoh: true,
+  dohResolverUrl: 'https://easyhandshake.com:8053/dns-query',
+};
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -33,7 +38,7 @@ app.get('/', (req, res) => {
 // Login form is submitted as POST, contains only domain
 app.post('/login', async function (req, res) {
   // New instance of HandshakeLogin every time.
-  const hLogin = new HandshakeLogin();
+  const hLogin = new HandshakeLogin(hLoginOptions);
   const domain = req.body.domain;
 
   // Generate a random challenge and store in session (to verify later)
@@ -82,7 +87,7 @@ app.get('/servercallback', async function (req, res) {
 
   try {
     // Create a new instance every time.
-    const hLogin = new HandshakeLogin();
+    const hLogin = new HandshakeLogin(hLoginOptions);
 
     // Parse response data
     const responseData = hLogin.parseResponseDataFromUrl(url);
