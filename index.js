@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const express = require('express');
 const session = require('express-session');
 
-const { HandshakeLogin } = require('../handshake-login/build/main');
+const { HandshakeLogin } = require('handshake-login');
 
 const app = express();
 const port = process.env.PORT || 3000;
