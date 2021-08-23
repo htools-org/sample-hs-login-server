@@ -26,6 +26,6 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "handshake-login": "file:../handshake-login/handshake-login-0.1.0.tgz"
+    "handshake-login": "^0.1.0"
   }
 }
